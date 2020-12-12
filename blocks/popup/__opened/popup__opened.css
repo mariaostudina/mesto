@@ -1,3 +1,4 @@
 .popup__opened {
     display: flex;
+    flex-direction: column;
 }
