@@ -8,5 +8,13 @@
     margin: 0 auto 48px;
     border: none;
     border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
 
+@media screen and (max-width: 450px) {
+
+    .popup__describtion {
+      width: 238px;
+      height: 27px;
+      margin: 0 22px 45px 22px;
+    }
 }

@@ -9,4 +9,13 @@
     border: none;
     border-bottom: 1px solid rgb(0, 0, 0, 0.2);   
 }
+
+@media screen and (max-width: 450px) {
+
+    .popup__name {
+      width: 238px;
+      height: 27px;
+      margin: 0 22px 30px 22px;
+    }
+}
     

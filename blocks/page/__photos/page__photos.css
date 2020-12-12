@@ -16,10 +16,11 @@
       max-width: 720px;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
+      justify-items: center;
     }
   }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 
     .page__photos {
       max-width: 282px;

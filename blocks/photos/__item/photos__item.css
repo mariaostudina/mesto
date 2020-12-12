@@ -1,5 +1,6 @@
 .photos__item {
     background-image: url(../../../images/photos_background.png);
     background-repeat: no-repeat;
-    height: 362px;
+    width: 282px;
+    height: 361px;
 }

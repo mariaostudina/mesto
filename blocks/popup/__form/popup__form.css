@@ -2,3 +2,11 @@
     width: 358px;
     margin: 54px auto 37px;
 }
+
+@media screen and (max-width: 450px) {
+
+    .popup__form {
+      width: 282px;
+      margin: 72px auto 0;
+    }
+}
