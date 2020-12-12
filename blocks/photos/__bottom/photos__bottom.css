@@ -1,0 +1,7 @@
+.photos__bottom {
+    width: 246px;
+    min-height: 23px;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 15px 31px 21px;
+}

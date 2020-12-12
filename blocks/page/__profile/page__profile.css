@@ -1,0 +1,7 @@
+.page__profile {
+    max-width: 880px;
+    min-height: 120px;
+    margin: 81px auto 51px;
+    display: flex;
+    justify-content: space-between;
+}

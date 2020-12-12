@@ -1,0 +1,15 @@
+.popup__save-button {
+    background-image: url(../../../images/popup__save-button.png);
+    background-repeat: no-repeat;
+    background-size: 358px 50px;
+    width: 358px;
+    height: 50px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.popup__save-button:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+    cursor: pointer;
+  }

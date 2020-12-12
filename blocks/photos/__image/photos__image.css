@@ -1,0 +1,6 @@
+.photos__image {
+    background-image: url(../../../images/photos_background.png);
+    background-repeat: no-repeat;
+    width: 282px;
+    height: 282px;
+}
