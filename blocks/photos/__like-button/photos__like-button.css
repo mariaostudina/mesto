@@ -2,7 +2,7 @@
     background-image: url(../../../images/photos_like-button.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #fff;
+    background-color: transparent;
     width: 20.76px;
     min-height: 18.13px;
     border: none;
@@ -16,7 +16,7 @@
 }
 
 .photos__like-button:active {
-    background-image: url(../../../images/photos_like-button-active.png);
+    background-image: url(../../../images/photos_like-button-active.svg);
     background-repeat: no-repeat;
     background-position: center;
     opacity: 1;

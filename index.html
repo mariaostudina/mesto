@@ -13,83 +13,82 @@
 
 <body class="page">
     <header class="header page__header">
-        <img class="header__logo" src="images/mesto_logo.png" alt="Логотип Mesto">
+        <img class="header__logo" src="images/mesto_logo.svg" alt="Логотип Mesto">
     </header>
     <main>
-        <div class="profile page__profile">
+        <section class="profile page__profile">
             <div class="profile__data">
                 <img class="profile__image" src="images/cousteau.jpg" alt="Жак-Ив Кусто">
                 <div class="profile__info">
                     <h1 class="profile__title">Жак&#8209;Ив&nbsp;Кусто</h1>
-                    <button class="profile__edit-button" type="submit"></button>
+                    <button class="profile__edit-button" type="button" aria-label="edit"></button>
                     <p class="profile__subtitle">Исследователь&nbsp;океана</p>
                 </div>
             </div>
-            <button class="profile__add-button" type="submit"></button>
-        </div>
-        <section class="photos">
-            <ul class="page__photos">
-                <li class="photos__item">
-                    <img class="photos__image" src="images/karachaevsk.png" alt="Cентинский храм">
-                    <div class="photos__bottom">
-                        <p class="photos__caption">Карачаевск</p>
-                        <button class="photos__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="photos__item">
-                    <img class="photos__image" src="images/elbrus.png" alt="Эльбрус">
-                    <div class="photos__bottom">
-                        <p class="photos__caption">Гора Эльбрус</p>
-                        <button class="photos__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="photos__item">
-                    <img class="photos__image" src="images/dombay.png" alt="Домбай">
-                    <div class="photos__bottom">
-                        <p class="photos__caption">Домбай</p>
-                        <button class="photos__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="photos__item">
-                    <img class="photos__image" src="images/elbrus.png" alt="Эльбрус">
-                    <div class="photos__bottom">
-                        <p class="photos__caption">Гора Эльбрус</p>
-                        <button class="photos__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="photos__item">
-                    <img class="photos__image" src="images/dombay.png" alt="Домбай">
-                    <div class="photos__bottom">
-                        <p class="photos__caption">Домбай</p>
-                        <button class="photos__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="photos__item">
-                    <img class="photos__image" src="images/karachaevsk.png" alt="Cентинский храм">
-                    <div class="photos__bottom">
-                        <p class="photos__caption">Карачаево-Черкессия</p>
-                        <button class="photos__like-button" type="button"></button>
-                    </div>
-                </li>
-            </ul>
+            <button class="profile__add-button" type="button" aria-label="add"></button>
+        </section>
+        <section class="photos page__photos">
+            <div class="photos__item">
+                <img class="photos__image" src="images/karachaevsk.png" alt="Cентинский храм">
+                <div class="photos__bottom">
+                    <h2 class="photos__caption">Карачаевск</h2>
+                    <button class="photos__like-button" type="button" aria-label="like"></button>
+                </div>
+            </div>
+            <div class="photos__item">
+                <img class="photos__image" src="images/elbrus.png" alt="Эльбрус">
+                <div class="photos__bottom">
+                    <h2 class="photos__caption">Гора Эльбрус</h2>
+                    <button class="photos__like-button" type="button" aria-label="like"></button>
+                </div>
+            </div>
+            <div class="photos__item">
+                <img class="photos__image" src="images/dombay.png" alt="Домбай">
+                <div class="photos__bottom">
+                    <h2 class="photos__caption">Домбай</h2>
+                    <button class="photos__like-button" type="button" aria-label="like"></button>
+                </div>
+            </div>
+            <div class="photos__item">
+                <img class="photos__image" src="images/elbrus.png" alt="Эльбрус">
+                <div class="photos__bottom">
+                    <h2 class="photos__caption">Гора Эльбрус</h2>
+                    <button class="photos__like-button" type="button" aria-label="like"></button>
+                </div>
+            </div>
+            <div class="photos__item">
+                <img class="photos__image" src="images/dombay.png" alt="Домбай">
+                <div class="photos__bottom">
+                    <h2 class="photos__caption">Домбай</h2>
+                    <button class="photos__like-button" type="button" aria-label="like"></button>
+                </div>
+            </div>
+            <div class="photos__item">
+                <img class="photos__image" src="images/karachaevsk.png" alt="Cентинский храм">
+                <div class="photos__bottom">
+                    <h2 class="photos__caption">Карачаево-Черкессия</h2>
+                    <button class="photos__like-button" type="button" aria-label="like"></button>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer page__footer">
         <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
     </footer>
     <div class="popup">
-        <button class="popup__close-button" type="button"></button>
+        <button class="popup__close-button" type="button" aria-label="close"></button>
         <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form">
-                <input class="popup__name" type="text" placeholder="Жак-Ив Кусто">
-                <input class="popup__describtion" type="text" placeholder="Исследователь океана">
-                <button class="popup__save-button" type="submit">Сохранить</button>
+            <form class="popup__form" name="form">
+                <input class="popup__input popup__input_name" type="text" name="name" placeholder="Жак-Ив Кусто" required>
+                <input class="popup__input popup__input_describtion" type="text" name="description" placeholder="Исследователь океана"
+                    required>
+                <button class="popup__save-button" type="submit" aria-label="submit">Сохранить</button>
             </form>
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="script/index.js"></script>
 
 </body>
 
