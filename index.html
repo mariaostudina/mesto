@@ -28,7 +28,7 @@
             <button class="profile__add-button" type="button" aria-label="add"></button>
         </section>
         <section class="photos page__photos">
-            <div class="photos__item">
+            <!-- <div class="photos__item">
                 <img class="photos__image" src="images/karachaevsk.png" alt="Cентинский храм">
                 <div class="photos__bottom">
                     <h2 class="photos__caption">Карачаевск</h2>
@@ -68,7 +68,7 @@
                 <div class="photos__bottom">
                     <h2 class="photos__caption">Карачаево-Черкессия</h2>
                     <button class="photos__like-button" type="button" aria-label="like"></button>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
@@ -86,6 +86,17 @@
                 <button class="popup__save-button" type="submit" aria-label="submit">Сохранить</button>
             </form>
         </div>
+        <div class="popup">
+            <button class="popup__close-button" type="button" aria-label="close"></button>
+            <div class="popup__container">
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form" name="form">
+                    <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Название" required>
+                    <input class="popup__input popup__input_type_describtion" type="text" name="description" placeholder="Ссылка на картинку"
+                        required>
+                    <button class="popup__save-button" type="submit" aria-label="submit">Сохранить</button>
+                </form>
+            </div>
     </div>
 
     <script src="script/index.js"></script>
