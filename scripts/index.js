@@ -43,7 +43,7 @@ const templateElement = document.querySelector('.template');
 const popupLinkNode = document.querySelector('.popup__input_type_link');
 const popupCaptionNode = document.querySelector('.popup__input_type_caption');
 const popupFullsizeNode = document.querySelector('.popup_type_fullsize');
-const popupFullsizeContainerNode = document.querySelector('.popup__container_form_fullsize');
+const popupFullsizeContainerNode = document.querySelector('.popup__container-fullsize');
 
 
 function renderPhotos() {
