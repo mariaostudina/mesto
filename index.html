@@ -28,78 +28,58 @@
             <button class="profile__add-button" type="button" aria-label="add"></button>
         </section>
         <section class="photos page__photos">
-            <!-- <div class="photos__item">
-                <img class="photos__image" src="images/karachaevsk.png" alt="Cентинский храм">
-                <div class="photos__bottom">
-                    <h2 class="photos__caption">Карачаевск</h2>
-                    <button class="photos__like-button" type="button" aria-label="like"></button>
-                </div>
-            </div>
-            <div class="photos__item">
-                <img class="photos__image" src="images/elbrus.png" alt="Эльбрус">
-                <div class="photos__bottom">
-                    <h2 class="photos__caption">Гора Эльбрус</h2>
-                    <button class="photos__like-button" type="button" aria-label="like"></button>
-                </div>
-            </div>
-            <div class="photos__item">
-                <img class="photos__image" src="images/dombay.png" alt="Домбай">
-                <div class="photos__bottom">
-                    <h2 class="photos__caption">Домбай</h2>
-                    <button class="photos__like-button" type="button" aria-label="like"></button>
-                </div>
-            </div>
-            <div class="photos__item">
-                <img class="photos__image" src="images/elbrus.png" alt="Эльбрус">
-                <div class="photos__bottom">
-                    <h2 class="photos__caption">Гора Эльбрус</h2>
-                    <button class="photos__like-button" type="button" aria-label="like"></button>
-                </div>
-            </div>
-            <div class="photos__item">
-                <img class="photos__image" src="images/dombay.png" alt="Домбай">
-                <div class="photos__bottom">
-                    <h2 class="photos__caption">Домбай</h2>
-                    <button class="photos__like-button" type="button" aria-label="like"></button>
-                </div>
-            </div>
-            <div class="photos__item">
-                <img class="photos__image" src="images/karachaevsk.png" alt="Cентинский храм">
-                <div class="photos__bottom">
-                    <h2 class="photos__caption">Карачаево-Черкессия</h2>
-                    <button class="photos__like-button" type="button" aria-label="like"></button>
-                </div> -->
-            </div>
+
         </section>
     </main>
     <footer class="footer page__footer">
         <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
     </footer>
-    <div class="popup">
-        <button class="popup__close-button" type="button" aria-label="close"></button>
+    <div class="popup popup_type_edit">
+        <button class="popup__close-button popup__close-button_form_edit" type="button" aria-label="close"></button>
         <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="form">
-                <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Жак-Ив Кусто" required>
-                <input class="popup__input popup__input_type_describtion" type="text" name="description" placeholder="Исследователь океана"
+                <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Жак-Ив Кусто"
                     required>
+                <input class="popup__input popup__input_type_describtion" type="text" name="description"
+                    placeholder="Исследователь океана" required>
                 <button class="popup__save-button" type="submit" aria-label="submit">Сохранить</button>
             </form>
         </div>
-        <div class="popup">
-            <button class="popup__close-button" type="button" aria-label="close"></button>
-            <div class="popup__container">
-                <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form" name="form">
-                    <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Название" required>
-                    <input class="popup__input popup__input_type_describtion" type="text" name="description" placeholder="Ссылка на картинку"
-                        required>
-                    <button class="popup__save-button" type="submit" aria-label="submit">Сохранить</button>
-                </form>
-            </div>
     </div>
-
-    <script src="script/index.js"></script>
+    <div class="popup popup_type_add">
+        <button class="popup__close-button popup__close-button_form_add" type="button" aria-label="close"></button>
+        <div class="popup__container">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form_type_add" name="form">
+                <input class="popup__input popup__input_type_caption" type="text" name="name" placeholder="Название"
+                    required>
+                <input class="popup__input popup__input_type_link" type="text" name="description"
+                    placeholder="Ссылка на картинку" required>
+                    <button class="popup__save-button" type="submit"
+                    aria-label="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup__fullsize">
+        <button class="popup__close-button popup__close-button_form_fullsize" type="button" aria-label="close"></button>
+        <div class="popup__container_form_fullsize">
+            <img class="popup__image-fullsize" src="#" alt="">
+            <h2 class="popup__title popup__title_form_fullsize"></h2>
+        </div>
+    </div>
+    <template class="template">
+        <div class="photos__item">
+            <button class="photos__delete-button" type="click" aria-label="delete"><img src="images/photos_bin.svg"
+                    alt="Корзина"></button>
+            <img class="photos__image" src="#" alt="">
+            <div class="photos__bottom">
+                <h2 class="photos__caption"></h2>
+                <button class="photos__like-button" type="button" aria-label="like"></button>
+            </div>
+        </div>
+    </template>
+    <script src="scripts/index.js"></script>
 
 </body>
 

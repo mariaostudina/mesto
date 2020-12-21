@@ -1,0 +1,17 @@
+.popup__title_form_fullsize {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+    background-color: transparent;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 450px) {
+
+    .popup__title_form_fullsize {
+        text-align: start;
+    }
+}

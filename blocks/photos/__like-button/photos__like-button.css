@@ -10,14 +10,6 @@
 }
 
 .photos__like-button:hover {
-    opacity: 0.5;
     transition: 0.5s;
     cursor: pointer;
-}
-
-.photos__like-button:active {
-    background-image: url(../../../images/photos_like-button-active.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 1;
 }
