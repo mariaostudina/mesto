@@ -29,21 +29,24 @@ const initialPhotos = [
 const photosContainerElement = document.querySelector('.photos');
 const profileEditButtonNode = document.querySelector('.profile__edit-button');
 const profileAddButtonNode = document.querySelector('.profile__add-button');
+const profileTitleNode = document.querySelector('.profile__title');
+const profileSubtitleNode = document.querySelector('.profile__subtitle');
 const editPopupNode = document.querySelector('.popup_type_edit');
 const addPopupNode = document.querySelector('.popup_type_add');
+const popupFullsizeNode = document.querySelector('.popup_type_fullsize');
 const editFormCloseButtonNode = document.querySelector('.popup__close-button_form_edit');
 const addFormCloseButtonNode = document.querySelector('.popup__close-button_form_add');
 const fullsizeFormCloseButtonNode = document.querySelector('.popup__close-button_form_fullsize');
-const profileTitleNode = document.querySelector('.profile__title');
-const profileSubtitleNode = document.querySelector('.profile__subtitle');
 const popupNameNode = document.querySelector('.popup__input_type_name');
 const popupDescribtionNode = document.querySelector('.popup__input_type_describtion');
 const popupFormNode = document.querySelector('.popup__form');
-const templateElement = document.querySelector('.template');
+const addCardForm = document.querySelector('.popup__form_type_add');
 const popupLinkNode = document.querySelector('.popup__input_type_link');
 const popupCaptionNode = document.querySelector('.popup__input_type_caption');
-const popupFullsizeNode = document.querySelector('.popup_type_fullsize');
 const popupFullsizeContainerNode = document.querySelector('.popup__container-fullsize');
+const fullsizeTitle = popupFullsizeContainerNode.querySelector('.popup__title_form_fullsize');
+const fullsizeImage = popupFullsizeContainerNode.querySelector('.popup__image-fullsize');
+const templateElement = document.querySelector('.template');
 
 
 function renderPhotos() {
@@ -55,10 +58,10 @@ function renderPhotos() {
 function composePhoto(item) {
         const newPhoto = templateElement.content.cloneNode(true);
         const photoItem = newPhoto.querySelector('.photos__image');
-        photoItem.src = item.link;
         const photoCaption = newPhoto.querySelector('.photos__caption');
+        photoItem.src = item.link;
+        photoItem.alt = item.name;
         photoCaption.textContent = item.name;
-
         const deleteButton = newPhoto.querySelector('.photos__delete-button');
         deleteButton.addEventListener('click', deletePhoto);
 
@@ -66,9 +69,9 @@ function composePhoto(item) {
         likeButton.addEventListener('click', likePhoto);
 
         photoItem.addEventListener('click', () => {
-                openFullsizePhoto(photoCaption.textContent, photoItem.src);
+                openFullsizePhoto(item.name, item.link);
         });
-        return newPhoto;    
+        return newPhoto;
 }
 
 
@@ -78,36 +81,27 @@ function deletePhoto(event) {
 }
 
 
-function bindAddItemListener() {
-    const addButtonElement = document.querySelector('.popup__form_type_add');
-    addButtonElement.addEventListener('submit', (event) => {
-        event.preventDefault();
-        addNewPhoto();
-    });
-}
-
-
 function addNewPhoto() {
-    const inputLink = popupLinkNode.value;
-    const inputCaption = popupCaptionNode.value;
-    const newPhoto = composePhoto({link: inputLink, name: inputCaption});
-    photosContainerElement.prepend(newPhoto);
+        const inputLink = popupLinkNode.value;
+        const inputCaption = popupCaptionNode.value;
+        const newPhoto = composePhoto({ link: inputLink, name: inputCaption });
+        photosContainerElement.prepend(newPhoto);
 }
 
 
 function likePhoto(event) {
-        const targetButton = event.target.closest('.photos__like-button');
-        targetButton.classList.toggle('photos__like-button_active');
+        event.target.classList.toggle('photos__like-button_active');
 }
 
 
 function openPopup(popup) {
         popup.classList.add('popup_opened');
-        popupNameNode.value = profileTitleNode.textContent; 
-        popupDescribtionNode.value = profileSubtitleNode.textContent;
 }
+
 profileEditButtonNode.addEventListener('click', () => {
         openPopup(editPopupNode);
+        popupNameNode.value = profileTitleNode.textContent;
+        popupDescribtionNode.value = profileSubtitleNode.textContent;
 });
 profileAddButtonNode.addEventListener('click', () => {
         openPopup(addPopupNode);
@@ -129,22 +123,26 @@ fullsizeFormCloseButtonNode.addEventListener('click', () => {
 
 
 function submitForm(event) {
-    event.preventDefault();
-    profileTitleNode.textContent = popupNameNode.value;
-    profileSubtitleNode.textContent = popupDescribtionNode.value;
-    closePopup(editPopupNode);
+        event.preventDefault();
+        profileTitleNode.textContent = popupNameNode.value;
+        profileSubtitleNode.textContent = popupDescribtionNode.value;
+        closePopup(editPopupNode);
 }
 
 
 const openFullsizePhoto = (name, link) => {
-        popupFullsizeNode.classList.add('popup_opened');
-        const fullsizeTitle = popupFullsizeContainerNode.querySelector('.popup__title_form_fullsize');
-        const fullsizeImage = popupFullsizeContainerNode.querySelector('.popup__image-fullsize');
+        openPopup(popupFullsizeNode);
         fullsizeTitle.textContent = name;
         fullsizeImage.src = link;
 };
 
 
 renderPhotos();
-bindAddItemListener();
+
 popupFormNode.addEventListener('submit', submitForm);
+
+addCardForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        addNewPhoto();
+        closePopup(addPopupNode);
+});
