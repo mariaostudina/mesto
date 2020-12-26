@@ -15,7 +15,7 @@ function showError(form, input, config) {
 }
 
 function hideError(form, input, config) {
-    const error = editProfileForm.querySelector(`#${input.id}-error`);
+    const error = form.querySelector(`#${input.id}-error`);
     error.textContent = "";
     input.classList.remove(config.invalidInputClass);
 }
@@ -62,7 +62,6 @@ function enableValidation(config) {
 
                 form.addEventListener('submit', (event) => {
                         event.preventDefault();
-                        addNewPhoto();
                         closePopup(addPopupNode);
                 });
 

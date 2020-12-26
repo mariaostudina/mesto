@@ -20,6 +20,8 @@ const popupFullsizeContainerNode = document.querySelector('.popup__container-ful
 const fullsizeTitle = popupFullsizeContainerNode.querySelector('.popup__title_form_fullsize');
 const fullsizeImage = popupFullsizeContainerNode.querySelector('.popup__image-fullsize');
 const templateElement = document.querySelector('.template');
+const popups = document.querySelectorAll('.popup')
+
 
 
 function renderPhotos() {
@@ -69,22 +71,23 @@ function likePhoto(event) {
 
 function openPopup(popup) {
         popup.classList.add('popup_opened');
+        document.addEventListener('keydown', closeByEscape);
 }
-
 profileEditButtonNode.addEventListener('click', () => {
         openPopup(editPopupNode);
         popupNameNode.value = profileTitleNode.textContent;
         popupDescribtionNode.value = profileSubtitleNode.textContent;
 });
+
 profileAddButtonNode.addEventListener('click', () => {
+        addCardForm.reset()
         openPopup(addPopupNode);
-
-
 });
 
 
 function closePopup(popup) {
         popup.classList.remove('popup_opened');
+        document.removeEventListener('keydown', closeByEscape);
 }
 editFormCloseButtonNode.addEventListener('click', () => {
         closePopup(editPopupNode);
@@ -96,21 +99,24 @@ fullsizeFormCloseButtonNode.addEventListener('click', () => {
         closePopup(popupFullsizeNode);
 });
 
-document.addEventListener('keydown', (event) => {
-        const openPopup = document.querySelector('.popup_opened');
-        if (event.key === 'Escape') {
-                closePopup(openPopup);
+function closeByEscape(evt) {
+        if (evt.key === 'Escape') {
+                const openedPopup = document.querySelector('.popup_opened')
+                closePopup(openedPopup);
         }
-});
+}
 
-document.addEventListener('click' , (event) => {
-        const openPopup = document.querySelector('.popup_opened');
-        if (event.target.classList.contains('popup')) {
-                closePopup(openPopup);
+
+popups.forEach((popup) => {
+    popup.addEventListener('click', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
         }
+        if (evt.target.classList.contains('popup__close-button')) {
+          closePopup(popup)
+        }
+    })
 })
-
-
 
 
 function submitForm(event) {
@@ -132,6 +138,8 @@ renderPhotos();
 
 popupFormNode.addEventListener('submit', submitForm);
 
-popupFormNode.addEventListener('submit', (event) => {
+addCardForm.addEventListener('submit', (event) => {
         event.preventDefault();
-})
+        addNewPhoto()
+        closePopup(addPopupNode);
+}) 
