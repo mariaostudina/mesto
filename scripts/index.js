@@ -89,15 +89,7 @@ function closePopup(popup) {
         popup.classList.remove('popup_opened');
         document.removeEventListener('keydown', closeByEscape);
 }
-editFormCloseButtonNode.addEventListener('click', () => {
-        closePopup(editPopupNode);
-});
-addFormCloseButtonNode.addEventListener('click', () => {
-        closePopup(addPopupNode);
-});
-fullsizeFormCloseButtonNode.addEventListener('click', () => {
-        closePopup(popupFullsizeNode);
-});
+
 
 function closeByEscape(evt) {
         if (evt.key === 'Escape') {
