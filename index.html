@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pages/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='description' content='интерактивный фотоальбом'>
+    <meta name='keywords' content='фотографии, фотоальбом'>
+    <meta name="author" content="Мария Остудина">
+    <title>Mesto</title>
+</head>
+
+<body class="page">
+    <header class="header page__header">
+        <img class="header__logo" src="images/mesto_logo.svg" alt="Логотип Mesto">
+    </header>
+    <main>
+        <section class="profile page__profile">
+            <div class="profile__data">
+                <img class="profile__image" src="images/cousteau.jpg" alt="Жак-Ив Кусто">
+                <div class="profile__info">
+                    <h1 class="profile__title">Жак&#8209;Ив&nbsp;Кусто</h1>
+                    <button class="profile__edit-button" type="button" aria-label="edit"></button>
+                    <p class="profile__subtitle">Исследователь&nbsp;океана</p>
+                </div>
+            </div>
+            <button class="profile__add-button" type="button" aria-label="add"></button>
+        </section>
+        <section class="photos page__photos">
+
+        </section>
+    </main>
+    <footer class="footer page__footer">
+        <p class="footer__copyright">&copy; 2020. Mesto Russia</p>
+    </footer>
+    <div class="popup popup_type_edit">
+        <button class="popup__close-button popup__close-button_form_edit" type="button" aria-label="close"></button>
+        <div class="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form popup__form_type_edit" name="form" novalidate>
+                <input class="popup__input popup__input_type_name" id="input-name" type="text" name="name"
+                    placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" autocomplete="off" required>
+                <span class="error" id="input-name-error"></span>
+                <input class="popup__input popup__input_type_describtion" id="input-describtion" type="text"
+                    name="description" placeholder="Исследователь океана" minlength="2" maxlength="200"
+                    autocomplete="off" required>
+                <span class="error" id="input-describtion-error"></span>
+                <button class="popup__save-button" type="submit" aria-label="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_add">
+        <button class="popup__close-button popup__close-button_form_add" type="button" aria-label="close"></button>
+        <div class="popup__container">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form_type_add" name="form" novalidate>
+                <input class="popup__input popup__input_type_caption" id="input-caption" type="text" name="name" placeholder="Название"
+                    minlength="2" maxlength="30" autocomplete="off" required>
+                    <span class="error" id="input-caption-error"></span>
+                <input class="popup__input popup__input_type_link" id="input-link" type="url" name="description"
+                    placeholder="Ссылка на картинку" autocomplete="off" required>
+                    <span class="error" id="input-link-error"></span>
+                <button class="popup__save-button" type="submit" aria-label="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_fullsize">
+        <button class="popup__close-button popup__close-button_form_fullsize" type="button" aria-label="close"></button>
+        <div class="popup__container-fullsize">
+            <img class="popup__image-fullsize" src="#" alt="#">
+            <h2 class="popup__title popup__title_form_fullsize"></h2>
+        </div>
+    </div>
+    <template class="template">
+        <div class="photos__item">
+            <button class="photos__delete-button" type="click" aria-label="delete"><img src="images/photos_bin.svg"
+                    alt="Корзина"></button>
+            <img class="photos__image" src="#" alt="#">
+            <div class="photos__bottom">
+                <h2 class="photos__caption"></h2>
+                <button class="photos__like-button" type="button" aria-label="like"></button>
+            </div>
+        </div>
+    </template>
+    <script type="module" src="scripts/Card.js"></script>
+    <script type="module" src="scripts/FormValidator.js"></script>
+    <script type="module" src="scripts/index.js"></script>
+        
+</body>
+
+</html>

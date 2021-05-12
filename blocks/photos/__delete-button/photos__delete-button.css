@@ -1,0 +1,13 @@
+.photos__delete-button {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+}
+
+.photos__delete-button:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+    cursor: pointer;
+}

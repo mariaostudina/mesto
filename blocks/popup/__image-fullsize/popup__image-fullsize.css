@@ -1,0 +1,15 @@
+.popup__image-fullsize {
+    max-width: 75vw;
+    max-height: 75vh;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+@media screen and (max-width: 450px) {
+
+    .popup__image-fullsize {
+        width: 240px;
+        height: 299px;
+    }
+}

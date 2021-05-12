@@ -1,0 +1,6 @@
+.photos__like-button_active {
+    background-image: url(../../../images/photos_like-button-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}

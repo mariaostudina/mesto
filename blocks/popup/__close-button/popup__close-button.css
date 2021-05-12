@@ -1,0 +1,27 @@
+.popup__close-button {
+    background-image: url(../../../images/profile_add-button.svg);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-color: transparent;
+    transform: rotate(45deg);
+    width: 40px;
+    height: 40px;
+    border: none;
+    margin-left: 455px;
+}
+
+.popup__close-button:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+
+    .popup__close-button {
+        background-size: 26px 26px;
+        width: 26px;
+        height: 26px;
+        margin-left: 250px;
+    }
+}

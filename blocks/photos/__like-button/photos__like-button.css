@@ -1,0 +1,15 @@
+.photos__like-button {
+    background-image: url(../../../images/photos_like-button.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    width: 20.76px;
+    min-height: 18.13px;
+    border: none;
+    
+}
+
+.photos__like-button:hover {
+    transition: 0.5s;
+    cursor: pointer;
+}
