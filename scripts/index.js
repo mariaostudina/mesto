@@ -37,9 +37,9 @@ const profileSubtitleNode = document.querySelector('.profile__subtitle');
 const editPopupNode = document.querySelector('.popup_type_edit');
 const addPopupNode = document.querySelector('.popup_type_add');
 const popupFullsizeNode = document.querySelector('.popup_type_fullsize');
-const editFormCloseButtonNode = document.querySelector('.popup__close-button_form_edit');
+/* const editFormCloseButtonNode = document.querySelector('.popup__close-button_form_edit');
 const addFormCloseButtonNode = document.querySelector('.popup__close-button_form_add');
-const fullsizeFormCloseButtonNode = document.querySelector('.popup__close-button_form_fullsize');
+const fullsizeFormCloseButtonNode = document.querySelector('.popup__close-button_form_fullsize'); */
 const popupNameNode = document.querySelector('.popup__input_type_name');
 const popupDescribtionNode = document.querySelector('.popup__input_type_describtion');
 const popupFormNode = document.querySelector('.popup__form');
@@ -50,7 +50,7 @@ const popupCaptionNode = document.querySelector('.popup__input_type_caption');
 const popupFullsizeContainerNode = document.querySelector('.popup__container-fullsize');
 const fullsizeTitle = popupFullsizeContainerNode.querySelector('.popup__title_form_fullsize');
 const fullsizeImage = popupFullsizeContainerNode.querySelector('.popup__image-fullsize');
-const templateElement = document.querySelector('.template');
+/* const templateElement = document.querySelector('.template'); */
 const popups = document.querySelectorAll('.popup');
 const validationConfig = {
         formSelector: '.popup__form',
@@ -67,37 +67,33 @@ const validationAddForm = new FormValidator(validationConfig, addCardForm);
 // функция отрисовки первых шести карточек
 
 function renderPhotos() {
-        const photoItems = initialPhotos.map(({ name, link }) =>
-        (new Card(name, link, '.template', openFullSizePhoto))
-        );
-        const cardElements = photoItems.map(newPhoto => (newPhoto.generateCard()))
-         
-        photosContainerElement.append(...cardElements);
+        const photoItems = initialPhotos.map(item => {
+                return createCard({name: item.name, link: item.link})
+});         
+        photosContainerElement.append(...photoItems);
 }
 
-/* function createCard(item) {
+function createCard(item) {
   return new Card(item, '.template', openFullSizePhoto).generateCard();
-} */
+}
 
 // функция добавления новой карточки
 
 function addNewPhoto() {
         const inputCaption = popupCaptionNode.value;
         const inputLink = popupLinkNode.value;
-        const newPhoto = new Card(inputCaption, inputLink, '.template', openFullSizePhoto);
-        const cardElement = newPhoto.generateCard();
+        /* const newPhoto = new Card(inputCaption, inputLink, '.template', openFullSizePhoto); */
+        const cardElement = createCard(inputCaption, inputLink);
         photosContainerElement.prepend(cardElement);
 }
 
 // функция открытия фулсайз фотографии
 
-const openFullSizePhoto = (name, link) => {
+const openFullSizePhoto  = (name, link) => {
         fullsizeTitle.textContent = name;
         fullsizeImage.src = link;
-        /* fullsizeImage.alt = name; */
         openPopup(popupFullsizeNode);
-};
-
+}
 
 // функция открытия попапов
 
