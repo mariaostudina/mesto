@@ -37,9 +37,6 @@ const profileSubtitleNode = document.querySelector('.profile__subtitle');
 const editPopupNode = document.querySelector('.popup_type_edit');
 const addPopupNode = document.querySelector('.popup_type_add');
 const popupFullsizeNode = document.querySelector('.popup_type_fullsize');
-/* const editFormCloseButtonNode = document.querySelector('.popup__close-button_form_edit');
-const addFormCloseButtonNode = document.querySelector('.popup__close-button_form_add');
-const fullsizeFormCloseButtonNode = document.querySelector('.popup__close-button_form_fullsize'); */
 const popupNameNode = document.querySelector('.popup__input_type_name');
 const popupDescribtionNode = document.querySelector('.popup__input_type_describtion');
 const popupFormNode = document.querySelector('.popup__form');
@@ -50,7 +47,6 @@ const popupCaptionNode = document.querySelector('.popup__input_type_caption');
 const popupFullsizeContainerNode = document.querySelector('.popup__container-fullsize');
 const fullsizeTitle = popupFullsizeContainerNode.querySelector('.popup__title_form_fullsize');
 const fullsizeImage = popupFullsizeContainerNode.querySelector('.popup__image-fullsize');
-/* const templateElement = document.querySelector('.template'); */
 const popups = document.querySelectorAll('.popup');
 const validationConfig = {
         formSelector: '.popup__form',
@@ -82,8 +78,7 @@ function createCard(item) {
 function addNewPhoto() {
         const inputCaption = popupCaptionNode.value;
         const inputLink = popupLinkNode.value;
-        /* const newPhoto = new Card(inputCaption, inputLink, '.template', openFullSizePhoto); */
-        const cardElement = createCard(inputCaption, inputLink);
+        const cardElement = createCard({name: inputCaption, link: inputLink});
         photosContainerElement.prepend(cardElement);
 }
 
@@ -163,7 +158,7 @@ addCardForm.addEventListener('submit', (event) => {
         addNewPhoto()
         closePopup(addPopupNode);
         addCardForm.reset()
-        
+        validationAddForm._setButtonState(false)
 })
 
 validationEditForm.enableValidation()
