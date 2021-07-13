@@ -158,7 +158,7 @@ addCardForm.addEventListener('submit', (event) => {
         addNewPhoto()
         closePopup(addPopupNode);
         addCardForm.reset()
-        validationAddForm._setButtonState(false)
+        validationAddForm.setButtonState(false)
 })
 
 validationEditForm.enableValidation()

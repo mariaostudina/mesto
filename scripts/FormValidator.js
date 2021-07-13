@@ -34,7 +34,7 @@ export class FormValidator {
 
         // метод блокировки кнопки сохранить
 
-        _setButtonState(isActive) {
+        setButtonState(isActive) {
                 if (isActive) {
                         this._saveButton.classList.remove(this._config.invalideButtonClass);
                         this._saveButton.disabled = false;
@@ -52,7 +52,7 @@ export class FormValidator {
                 inputList.forEach(input => {
                         input.addEventListener('input', (event) => {
                                 this._checkInputValidity(input);
-                                this._setButtonState(this._form.checkValidity());
+                                this.setButtonState(this._form.checkValidity());
                         })
                 });
 
@@ -66,7 +66,7 @@ export class FormValidator {
                         event.preventDefault();
                 });
 
-                this._setButtonState(this._form.checkValidity());
+                this.setButtonState(this._form.checkValidity());
         } 
         
 }
